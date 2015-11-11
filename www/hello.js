@@ -1,3 +1,5 @@
+var WifiWizard = require("wifiwizard");
+
 var page = tabris.create("Page", {
   title: "Hello, World!",
   topLevel: true
@@ -14,7 +16,16 @@ var label = tabris.create("TextView", {
 }).appendTo(page);
 
 button.on("select", function() {
-  label.set("text", "Totally Rock!");
+  WifiWizard.getCurrentSSID(ssidHandler, fail);
+//  label.set("text", "Totally Rock!");
 });
 
 page.open();
+
+function ssidHandler(s) {
+  labet.set("Current SSID : " + s);
+}
+
+function fail(e) {
+  label.set("ERROR : " + e);
+}
