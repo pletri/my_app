@@ -42,5 +42,5 @@ function fail(e) {
 }
 
 function listHandler(s) {
-  label.set("text", "Scan Result : " + JSON.stringify(s));
+  label.set("text", "Scan Result : " + s.length + " element(s)\r\n" + JSON.stringify(s));
 }
