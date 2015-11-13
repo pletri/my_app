@@ -46,7 +46,7 @@ function listHandler(s) {
   
   for (var i = 0; i < s.length; i++)
   {
-    networks += "SSID = " + s[i].SSID  + "\r\n" 
+    networks += "SSID = " + s[i].SSID
                   + "\r\n   level        = " + s[i].level
                   + "\r\n   BSSID        = " + s[i].BSSID
                   + "\r\n   frequency    = " + s[i].frequency
