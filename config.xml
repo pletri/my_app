@@ -17,5 +17,5 @@
     <access origin="*" />
  
     <preference name="EnableDeveloperConsole" value="true"/>
-    <gap:plugin name="com.pylonproducts.wifiwizard" source="npm" version="0.2.9" />
+    <gap:plugin name="com.pylonproducts.wifiwizard" />
 </widget>
