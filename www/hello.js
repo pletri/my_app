@@ -1,4 +1,4 @@
-require("com.pylonproducts.wifiwizard");
+//require("com.pylonproducts.wifiwizard");
 
 var page = tabris.create("Page", {
   title: "Hello, World!",
