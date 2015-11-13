@@ -42,5 +42,19 @@ function fail(e) {
 }
 
 function listHandler(s) {
-  label.set("text", "Scan Result : " + s.length + " element(s)\r\n" + JSON.stringify(s));
+  var networks = "";
+  
+  for (var i = 0; i < s.length; i++)
+  {
+    networks += "SSID = " + s[i].SSID  + "\r\n" 
+                  + "\r\n   level        = " + s[i].level
+                  + "\r\n   BSSID        = " + s[i].BSSID
+                  + "\r\n   frequency    = " + s[i].frequency
+                  + "\r\n   capabilities = " + s[i].capabilities
+                  + "\r\n   timestamp    = " + s[i].timestamp
+                  + "\r\n";
+  }
+  
+//  label.set("text", "Scan Result : " + s.length + " element(s)\r\n" + JSON.stringify(s));
+  label.set("text", "Scan Result : " + s.length + " element(s)\r\n" + networks);
 }
