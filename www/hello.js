@@ -27,7 +27,8 @@ button1.on("select", function() {
 });
 
 button2.on("select", function() {
-  WifiWizard.getScanResults(listHandler, fail);
+//  WifiWizard.getScanResults(listHandler, fail);
+  WifiWizard.getScanResults({numLevels: false}, listHandler, fail);
 //  label.set("text", "Totally Rock!");
 });
 
