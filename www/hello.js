@@ -76,7 +76,9 @@ function listHandler(s) {
 }
 
 //=== GEOLOCATION ===//
-var onSuccess = function(position) {
+function onSuccess(position) {
+  var geopos = "";
+
   geopos = 'Latitude: '          + position.coords.latitude          + '\n' +
            'Longitude: '         + position.coords.longitude         + '\n' +
            'Altitude: '          + position.coords.altitude          + '\n' +
@@ -90,6 +92,8 @@ var onSuccess = function(position) {
 };
 
 function onError(error) {
+  var geopos = "";
+
   geopos = 'code: '    + error.code    + '\n' +
            'message: ' + error.message + '\n';
 
