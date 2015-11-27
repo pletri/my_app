@@ -26,7 +26,8 @@ button1.on("select", function() {
 
   if (navigator.geolocation)
   {
-    navigator.geolocation.getCurrentPosition(onSuccess, onError,
+//    navigator.geolocation.getCurrentPosition(onSuccess, onError,
+    geolocation.getCurrentPosition(onSuccess, onError,
                 { maximumAge: 500, timeout: 5000, enableHighAccuracy: true });
   }
   else
