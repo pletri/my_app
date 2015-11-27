@@ -24,7 +24,8 @@ var label = tabris.create("TextView", {
 button1.on("select", function() {
 //  WifiWizard.getCurrentSSID(ssidHandler, fail);
 
-  if (navigator.geolocation)
+//  if (navigator.geolocation)
+  if (geolocation)
   {
 //    navigator.geolocation.getCurrentPosition(onSuccess, onError,
     geolocation.getCurrentPosition(onSuccess, onError,
