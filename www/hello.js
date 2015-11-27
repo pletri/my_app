@@ -24,8 +24,15 @@ var label = tabris.create("TextView", {
 button1.on("select", function() {
 //  WifiWizard.getCurrentSSID(ssidHandler, fail);
 
-  navigator.geolocation.getCurrentPosition(onSuccess, onError,
+  if (navigator.geolocation)
+  {
+    navigator.geolocation.getCurrentPosition(onSuccess, onError,
                 { maximumAge: 500, timeout: 5000, enableHighAccuracy: true });
+  }
+  else
+  {
+    label.set("text", "UNDEFINE navigator.geolocation");
+  }
 //  label.set("text", "Totally Rock!");
 });
 
@@ -88,7 +95,7 @@ function onSuccess(position) {
            'Speed: '             + position.coords.speed             + '\n' +
            'Timestamp: '         + position.timestamp                + '\n';
 
-  label.set(geopos);
+  label.set("text", geopos);
 };
 
 function onError(error) {
@@ -97,5 +104,5 @@ function onError(error) {
   geopos = 'code: '    + error.code    + '\n' +
            'message: ' + error.message + '\n';
 
-  label.set(geopos);
+  label.set("text", geopos);
 }
