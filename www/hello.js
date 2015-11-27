@@ -91,7 +91,7 @@ var onSuccess = function(position) {
 
 function onError(error) {
   geopos = 'code: '    + error.code    + '\n' +
-           'message: ' + error.message + '\n');
+           'message: ' + error.message + '\n';
 
   label.set(geopos);
 }
