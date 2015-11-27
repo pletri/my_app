@@ -47,8 +47,14 @@ function listHandler(s) {
   
   for (var i = 0; i < s.length; i++)
   {
+    var exp = 0.0;
+    var res = 0.0;
+    
+    exp = ( 27.55 - (20 * Math.log10(s[i].frequency)) + Math.abs(s[i].level) ) / 20;
+    res = Math.pow(10.0, exp);
     networks += "SSID = " + s[i].SSID
                   + "\r\n   level        = " + s[i].level
+                    + "      (" + res + " m)"
                   + "\r\n   BSSID        = " + s[i].BSSID
                   + "\r\n   frequency    = " + s[i].frequency
                   + "\r\n   capabilities = " + s[i].capabilities
