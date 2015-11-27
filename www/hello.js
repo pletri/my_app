@@ -22,7 +22,10 @@ var label = tabris.create("TextView", {
 
 
 button1.on("select", function() {
-  WifiWizard.getCurrentSSID(ssidHandler, fail);
+//  WifiWizard.getCurrentSSID(ssidHandler, fail);
+
+  navigator.geolocation.getCurrentPosition(onSuccess, onError,
+                { maximumAge: 500, timeout: 5000, enableHighAccuracy: true });
 //  label.set("text", "Totally Rock!");
 });
 
@@ -70,4 +73,25 @@ function listHandler(s) {
   
 //  label.set("text", "Scan Result : " + s.length + " element(s)\r\n" + JSON.stringify(s));
   label.set("text", "Scan Result : " + s.length + " element(s)\r\n" + networks);
+}
+
+//=== GEOLOCATION ===//
+var onSuccess = function(position) {
+  geopos = 'Latitude: '          + position.coords.latitude          + '\n' +
+           'Longitude: '         + position.coords.longitude         + '\n' +
+           'Altitude: '          + position.coords.altitude          + '\n' +
+           'Accuracy: '          + position.coords.accuracy          + '\n' +
+           'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+           'Heading: '           + position.coords.heading           + '\n' +
+           'Speed: '             + position.coords.speed             + '\n' +
+           'Timestamp: '         + position.timestamp                + '\n';
+
+  label.set(geopos);
+};
+
+function onError(error) {
+  geopos = 'code: '    + error.code    + '\n' +
+           'message: ' + error.message + '\n');
+
+  label.set(geopos);
 }
