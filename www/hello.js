@@ -25,10 +25,10 @@ button1.on("select", function() {
 //  WifiWizard.getCurrentSSID(ssidHandler, fail);
 
 //  if (navigator.geolocation)
-  if (geolocation)
+  if (window.geolocation)
   {
 //    navigator.geolocation.getCurrentPosition(onSuccess, onError,
-    geolocation.getCurrentPosition(onSuccess, onError,
+    window.geolocation.getCurrentPosition(onSuccess, onError,
                 { maximumAge: 500, timeout: 5000, enableHighAccuracy: true });
   }
   else
