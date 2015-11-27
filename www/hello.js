@@ -42,6 +42,12 @@ function fail(e) {
   label.set("text", "ERROR : " + e);
 }
 
+
+Math.log10 = Math.log10 || function(x) {
+  return Math.log(x) / Math.LN10;
+};
+
+
 function listHandler(s) {
   var networks = "";
   
