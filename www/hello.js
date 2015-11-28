@@ -26,7 +26,7 @@ button1.on("select", function() {
 
 //  if (navigator.geolocation)
   if (cordova.plugins.locationServices.geolocation)
-  {
+  { 
 //    navigator.geolocation.getCurrentPosition(onSuccess, onError,
     cordova.plugins.locationServices.geolocation.getCurrentPosition(
        onSuccess, onError,

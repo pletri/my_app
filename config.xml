@@ -18,5 +18,5 @@
  
     <preference name="EnableDeveloperConsole" value="true"/>
     <gap:plugin name="com.pylonproducts.wifiwizard" />
-    <gap:plugin name="cordova-plugin-locationservices" />
+    <gap:plugin name="cordova-plugin-locationservices" /> 
 </widget>
