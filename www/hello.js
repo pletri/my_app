@@ -25,15 +25,16 @@ button1.on("select", function() {
 //  WifiWizard.getCurrentSSID(ssidHandler, fail);
 
 //  if (navigator.geolocation)
-  if (window.geolocation)
+  if (cordova.plugins.locationServices.geolocation)
   {
 //    navigator.geolocation.getCurrentPosition(onSuccess, onError,
-    window.geolocation.getCurrentPosition(onSuccess, onError,
-                { maximumAge: 500, timeout: 5000, enableHighAccuracy: true });
+    cordova.plugins.locationServices.geolocation.getCurrentPosition(
+       onSuccess, onError,
+       { maximumAge: 500, timeout: 5000, enableHighAccuracy: true });
   }
   else
   {
-    label.set("text", "UNDEFINE navigator.geolocation");
+    label.set("text", "UNDEFINED cordova.plugins.locationServices.geolocation");
   }
 //  label.set("text", "Totally Rock!");
 });
