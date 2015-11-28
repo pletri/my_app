@@ -40,7 +40,6 @@ button1.on("select", function() {
     window.plugins.GPSLocator.getLocation( function(result) {
         label.set("text", JSON.stringify(result));
       }, function(e) {
-      {
         label.set("text", JSON.stringify(e));
       } );
   }
