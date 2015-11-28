@@ -28,9 +28,12 @@ button1.on("select", function() {
   if (cordova.plugins.locationServices.geolocation)
   { 
 //    navigator.geolocation.getCurrentPosition(onSuccess, onError,
+//       { maximumAge: 500, timeout: 5000, enableHighAccuracy: true });
     cordova.plugins.locationServices.geolocation.getCurrentPosition(
        onSuccess, onError,
-       { maximumAge: 500, timeout: 5000, enableHighAccuracy: true });
+       { maximumAge: 500, timeout: 5000, enableHighAccuracy: true,
+         priority: cordova.plugins.locationServices.geolocation.PRIORITY_HIGH_ACCURACY,
+         interval: 6000, fastInterval: 1000 });
   }
   else
   {
