@@ -25,15 +25,24 @@ button1.on("select", function() {
 //  WifiWizard.getCurrentSSID(ssidHandler, fail);
 
 //  if (navigator.geolocation)
-  if (cordova.plugins.locationServices.geolocation)
+//  if (cordova.plugins.locationServices.geolocation)
+  if (window.plugins.GPSLocator)
   { 
 //    navigator.geolocation.getCurrentPosition(onSuccess, onError,
 //       { maximumAge: 500, timeout: 5000, enableHighAccuracy: true });
-    cordova.plugins.locationServices.geolocation.getCurrentPosition(
-       onSuccess, onError,
-       { maximumAge: 500, timeout: 5000, enableHighAccuracy: true,
-         priority: cordova.plugins.locationServices.geolocation.PRIORITY_HIGH_ACCURACY,
-         interval: 6000, fastInterval: 1000 });
+
+//    cordova.plugins.locationServices.geolocation.getCurrentPosition(
+//       onSuccess, onError,
+//       { maximumAge: 500, timeout: 5000, enableHighAccuracy: true,
+//         priority: cordova.plugins.locationServices.geolocation.PRIORITY_HIGH_ACCURACY,
+//         interval: 6000, fastInterval: 1000 });
+
+    window.plugins.GPSLocator.getLocation( function(result) {
+        label.set("text", JSON.stringify(result));
+      }, function(e) {
+      {
+        label.set("text", JSON.stringify(e));
+      } );
   }
   else
   {
